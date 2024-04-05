@@ -488,28 +488,29 @@
 
     <!-- Welcome Page -->
     <div class="loading-page-welcome" id="welcome" style="opacity: 1;">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
 
-            <div class="text-center">
-                <h1 class="font-esthetic mb-4" style="font-size: 3rem;">The Wedding Of</h1>
-                <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
-                    <img src="./assets/images/DSC_4714.jpg" alt="bg">
-                </div>
-
-                <h1 class="font-esthetic my-4" style="font-size: 2.5rem;">Odon & Desi</h1>
-                <div id="nama-tamu"></div>
-
-                <button type="button" class="btn btn-light shadow rounded-4 mt-4" onclick="util.buka(this)">
-                    <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
-                </button>
+        <div class="text-center">
+            <h1 class="font-esthetic mb-4" style="font-size: 3rem;">The Wedding Of</h1>
+            <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
+                <img src="./assets/images/DSC_4714.jpg" alt="bg">
             </div>
+
+            <h1 class="font-esthetic my-4" style="font-size: 2.5rem;">Odon & Desi</h1>
+            <div id="nama-tamu"></div>
+
+            <!-- Call the util.buka() function when the button is clicked -->
+            <button type="button" class="btn btn-light shadow rounded-4 mt-4" onclick="util.bukaUndangan()">
+                <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
+            </button>
         </div>
     </div>
+</div>
 
-    <!-- Audio Button -->
-    <button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="util.music(this)" data-status="true" data-url="./assets/music/gusteja.mp3">
-        <i class="fa-solid fa-circle-pause spin-button"></i>
-    </button>
+<!-- Audio Button -->
+<button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="util.music(this)" data-status="true" data-url="./assets/music/gusteja.mp3">
+    <i class="fa-solid fa-circle-pause spin-button"></i>
+</button>
 
     <!-- Loading page -->
 <!--     <div class="loading-page" id="loading" style="opacity: 1;">
@@ -548,6 +549,17 @@
 </div>
 
 <script>
+    // Define the util object
+    var util = {
+        bukaUndangan: function() {
+            alert('Undangan dibuka!');
+            // Tambahkan logika atau aksi yang ingin Anda lakukan saat tombol di klik di sini
+        },
+        music: function(button) {
+            // Tambahkan logika atau aksi yang ingin Anda lakukan saat tombol musik di klik di sini
+        }
+    };
+
     // Wait for the DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', function () {
         // Display the progress info message
