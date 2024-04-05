@@ -559,24 +559,39 @@
     </button>
 
     <!-- Loading page -->
-    <div class="loading-page" id="loading" style="opacity: 1;">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
-            <div class="text-center w-75">
-                <img class="img-fluid mb-3" src="./assets/images/icon-192x192.png" alt="icon" style="width: 3.5rem;">
-                <div class="progress" role="progressbar" style="height: 0.5rem;">
-                    <div class="progress-bar" id="bar" style="width: 0%"></div>
-                </div>
-                <small class="mt-1 text-light" id="progress-info" style="display: none;">Loading asset</small>
-
-                <script>
-                    document.getElementById('progress-info').style.display = 'block';
-                </script>
-                <noscript>
-                    <small class="mt-1 text-danger">Maaf, undangan ini perlu javascript</small>
-                </noscript>
+    <div class="loading-page" id="loading" style="opacity: 1; background-color: black;">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
+        <div class="text-center w-75">
+            <img class="img-fluid mb-3" src="./assets/images/icon-192x192.png" alt="icon" style="width: 3.5rem;">
+            <div class="progress" role="progressbar" style="height: 0.5rem;">
+                <div class="progress-bar" id="bar" style="width: 0%"></div>
             </div>
+            <small class="mt-1 text-light" id="progress-info" style="display: none;">Loading asset</small>
+
+            <noscript>
+                <small class="mt-1 text-danger">Maaf, undangan ini perlu javascript</small>
+            </noscript>
         </div>
     </div>
+</div>
+
+<script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        // Display the progress info message
+        var progressInfo = document.getElementById('progress-info');
+        if (progressInfo) {
+            progressInfo.style.display = 'block';
+            // Set opacity to 0 after displaying the message
+            document.getElementById('loading').style.opacity = '0';
+            // Optional: Add a delay before hiding the loading screen
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+            }, 1000); // 1000 milliseconds = 1 second
+        }
+    });
+</script>
+
 
 
     <!-- Modal Foto Large -->
